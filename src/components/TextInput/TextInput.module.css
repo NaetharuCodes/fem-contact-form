@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: var(--xs);
+  color: var(--grey-900);
+  display: flex;
+  gap: var(--xs);
+}
+
+.required {
+  color: var(--green-600);
+}
+
+.input {
+  padding: var(--sm) var(--md);
+  border-radius: 8px;
+  border: 1px solid var(--grey-500);
+  color: var(--grey-900);
+  outline: none;
+  margin-bottom: var(--xs);
+}
+
+.input:focus {
+  border: 1px solid var(--green-600);
+}
+
+.error {
+  border: 1px solid var(--red);
+}
+
+.errorText {
+  color: var(--red);
+}
