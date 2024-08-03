@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+
+:root {
+  /* Colours */
+  --green-200: #e0f1e8;
+  --green-600: #0c7d69;
+  --grey-500: #86a2a5;
+  --grey-900: #2a4144;
+
+  /* Spacing */
+  --xs: 8px;
+  --sm: 12px;
+  --md: 16px;
+  --lg: 24px;
+  --xl: 32px;
+  --xxl: 40px;
+  --xxxl: 128px;
+}
