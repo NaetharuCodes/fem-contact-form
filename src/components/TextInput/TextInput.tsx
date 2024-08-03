@@ -3,17 +3,23 @@ import styles from "./TextInput.module.css";
 interface TextInputProps {
   labelText: string;
   id: string;
-  value: string;
-  onChange: () => string;
+  name: string;
+  value: string | undefined;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   required?: boolean;
+  error?: boolean;
+  errorText?: string;
 }
 
 const TextInput = ({
   labelText,
   id,
+  name,
   value,
   onChange,
   required,
+  error,
+  errorText,
 }: TextInputProps) => {
   return (
     <div className={styles.container}>
@@ -24,10 +30,12 @@ const TextInput = ({
       <input
         type="text"
         id={id}
+        name={name}
         value={value}
         onChange={onChange}
-        className={styles.input}
+        className={`${styles.input} ${error ? styles.error : ""}`}
       />
+      {error && <p className={styles.errorText}>{errorText}</p>}
     </div>
   );
 };
