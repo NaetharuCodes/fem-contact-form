@@ -1,11 +1,13 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./App.module.css";
 import TextInput from "./components/TextInput/TextInput";
+import RadioSelect from "./components/RadioSelect/RadioSelect";
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
+  queryType: string;
 }
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
     firstName: "",
     lastName: "",
     email: "",
+    queryType: "",
   });
 
   const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -60,6 +63,14 @@ const App = () => {
             required
           />
         </div>
+        <RadioSelect
+          heading="Query Type"
+          name="queryType"
+          options={["General Enquiery", "Support Request"]}
+          required
+          onChange={handleFormChange}
+          currentOption={formData.queryType}
+        />
       </form>
     </div>
   );
