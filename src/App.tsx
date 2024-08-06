@@ -2,12 +2,16 @@ import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./App.module.css";
 import TextInput from "./components/TextInput/TextInput";
 import RadioSelect from "./components/RadioSelect/RadioSelect";
+import TextArea from "./components/TextArea/TextArea";
+import Checkbox from "./components/Checkbox/Checkbox";
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
   queryType: string;
+  message: string;
+  consent: boolean;
 }
 
 const App = () => {
@@ -16,15 +20,25 @@ const App = () => {
     lastName: "",
     email: "",
     queryType: "",
+    message: "",
+    consent: false,
   });
 
-  const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  const handleFormChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const { name, value, type } = e.target;
 
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Submitted!", FormData);
   };
 
   useEffect(() => {
@@ -33,7 +47,7 @@ const App = () => {
 
   return (
     <div className={styles.container}>
-      <form action="" className={styles.form}>
+      <form action="" className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.header}>Contact Us</h1>
         <div className={styles.textInputContainer}>
           <TextInput
@@ -71,6 +85,13 @@ const App = () => {
           onChange={handleFormChange}
           currentOption={formData.queryType}
         />
+        <TextArea value={formData.message} onChange={handleFormChange} />
+        <Checkbox
+          text="I hearby consent to being contacted by the team"
+          onChange={handleFormChange}
+          checked={formData.consent}
+        />
+        <button className={styles.button}>Submit</button>
       </form>
     </div>
   );

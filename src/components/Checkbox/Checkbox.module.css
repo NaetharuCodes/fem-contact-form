@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: var(--xl);
+}
+
+.label {
+  color: var(--grey-900);
+  margin-left: var(--md);
+}
+
+.required {
+  color: var(--green-600);
+}
+
+.input {
+  border: none;
+  background-color: transparent;
+}
