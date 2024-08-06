@@ -56,24 +56,26 @@ const App = () => {
       <form action="" className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.header}>Contact Us</h1>
         <div className={styles.textInputContainer}>
-          <TextInput
-            labelText="First Name"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleFormChange}
-            required
-          />
-          <TextInput
-            labelText="Last Name"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleFormChange}
-            required
-            error={false}
-            errorText="You did gone mess up"
-          />
+          <div className={styles.nameInputs}>
+            <TextInput
+              labelText="First Name"
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleFormChange}
+              required
+            />
+            <TextInput
+              labelText="Last Name"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleFormChange}
+              required
+              error={false}
+              errorText="You did gone mess up"
+            />
+          </div>
           <TextInput
             labelText="Email Address"
             id="email"
