@@ -1,0 +1,37 @@
+.container {
+  padding: var(--lg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--xs);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.msgContainer {
+  background: var(--grey-900);
+  padding: var(--lg);
+  border-radius: var(--xs);
+}
+
+.mainMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mainMessageText {
+  margin-left: var(--xs);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subMessage {
+  font-size: 16px;
+  color: var(--green-200);
+}
