@@ -24,3 +24,9 @@
   vertical-align: top;
   resize: none;
 }
+
+@media screen and (min-width: 600px) {
+  .textArea {
+    min-height: 100px;
+  }
+}

@@ -30,6 +30,11 @@
     padding: var(--xxxl) var(--xl);
   }
 
+  .form {
+    max-width: 736px;
+    margin: auto;
+  }
+
   .nameInputs {
     display: flex;
     flex-direction: row;
