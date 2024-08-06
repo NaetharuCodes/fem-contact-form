@@ -9,7 +9,6 @@
 .form {
   background-color: white;
   border-radius: 16px;
-  flex-grow: 1;
   padding: 24px;
 }
 
@@ -24,4 +23,29 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: var(--md);
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding: var(--xxxl) var(--xl);
+  }
+
+  .nameInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--sm);
+  }
+
+  .nameInputs :first-child {
+    flex-grow: 1;
+  }
+
+  .nameInputs :last-child {
+    flex-grow: 1;
+  }
+
+  .form {
+    flex-grow: 0;
+  }
 }

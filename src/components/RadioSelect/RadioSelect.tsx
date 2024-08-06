@@ -22,22 +22,24 @@ const RadioSelect = ({
       <h2 className={styles.name}>
         {heading} <span className={styles.required}>{required ? "*" : ""}</span>
       </h2>
-      {options.map((option) => (
-        <label className={styles.radioButton} key={option}>
-          <input
-            className={styles.radioInput}
-            type="radio"
-            name={name}
-            id={option}
-            onChange={onChange}
-            value={option}
-            checked={option === currentOption}
-            required={required}
-          />
-          <span className={styles.customRadio}></span>
-          <span className={styles.label}>{option}</span>
-        </label>
-      ))}
+      <div className={styles.buttonsContainer}>
+        {options.map((option) => (
+          <label className={styles.radioButton} key={option}>
+            <input
+              className={styles.radioInput}
+              type="radio"
+              name={name}
+              id={option}
+              onChange={onChange}
+              value={option}
+              checked={option === currentOption}
+              required={required}
+            />
+            <span className={styles.customRadio}></span>
+            <span className={styles.label}>{option}</span>
+          </label>
+        ))}
+      </div>
     </div>
   );
 };

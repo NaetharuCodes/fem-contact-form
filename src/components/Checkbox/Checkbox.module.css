@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: row-reverse;
   margin-top: var(--xl);
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .label {
