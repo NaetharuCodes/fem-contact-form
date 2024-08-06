@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from "./App.module.css";
 import TextInput from "./components/TextInput/TextInput";
 import RadioSelect from "./components/RadioSelect/RadioSelect";
