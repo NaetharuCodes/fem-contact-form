@@ -4,6 +4,7 @@ import TextInput from "./components/TextInput/TextInput";
 import RadioSelect from "./components/RadioSelect/RadioSelect";
 import TextArea from "./components/TextArea/TextArea";
 import Checkbox from "./components/Checkbox/Checkbox";
+import Button from "./components/Button/Button";
 
 interface FormData {
   firstName: string;
@@ -38,7 +39,7 @@ const App = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Submitted!", FormData);
+    console.log("Submitted!", formData);
   };
 
   useEffect(() => {
@@ -85,13 +86,18 @@ const App = () => {
           onChange={handleFormChange}
           currentOption={formData.queryType}
         />
-        <TextArea value={formData.message} onChange={handleFormChange} />
+        <TextArea
+          value={formData.message}
+          onChange={handleFormChange}
+          required
+        />
         <Checkbox
           text="I hearby consent to being contacted by the team"
           onChange={handleFormChange}
           checked={formData.consent}
+          required
         />
-        <button className={styles.button}>Submit</button>
+        <Button text="Submit" />
       </form>
     </div>
   );

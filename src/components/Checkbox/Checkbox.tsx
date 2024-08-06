@@ -4,9 +4,10 @@ interface CheckboxProps {
   text: string;
   checked: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
+  required?: boolean;
 }
 
-const Checkbox = ({ text, checked, onChange }: CheckboxProps) => {
+const Checkbox = ({ text, checked, onChange, required }: CheckboxProps) => {
   return (
     <div className={styles.container}>
       <label className={styles.label} htmlFor="consent">
@@ -18,6 +19,7 @@ const Checkbox = ({ text, checked, onChange }: CheckboxProps) => {
         name="consent"
         onChange={onChange}
         checked={checked}
+        required={required}
       />
     </div>
   );

@@ -34,6 +34,7 @@ const TextInput = ({
         value={value}
         onChange={onChange}
         className={`${styles.input} ${error ? styles.error : ""}`}
+        required={required}
       />
       {error && <p className={styles.errorText}>{errorText}</p>}
     </div>

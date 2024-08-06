@@ -32,6 +32,7 @@ const RadioSelect = ({
             onChange={onChange}
             value={option}
             checked={option === currentOption}
+            required={required}
           />
           <span className={styles.customRadio}></span>
           <span className={styles.label}>{option}</span>
