@@ -5,6 +5,7 @@ import RadioSelect from "./components/RadioSelect/RadioSelect";
 import TextArea from "./components/TextArea/TextArea";
 import Checkbox from "./components/Checkbox/Checkbox";
 import Button from "./components/Button/Button";
+import SentModal from "./components/SendModal/SentModal";
 
 interface FormData {
   firstName: string;
@@ -25,6 +26,8 @@ const App = () => {
     consent: false,
   });
 
+  const [sent, setSent] = useState<boolean>(false);
+
   const handleFormChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
@@ -39,15 +42,17 @@ const App = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Submitted!", formData);
+    setSent(true);
   };
 
-  useEffect(() => {
-    console.log("FORM DATA: ", formData);
-  }, [formData]);
+  const closeModal = () => {
+    setSent(false);
+  };
 
   return (
     <div className={styles.container}>
+      {sent && <SentModal closeModal={closeModal} />}
+
       <form action="" className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.header}>Contact Us</h1>
         <div className={styles.textInputContainer}>
